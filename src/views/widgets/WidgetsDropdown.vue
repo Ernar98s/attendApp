@@ -30,7 +30,7 @@
       </CWidgetDropdown>
     </CCol>
     <CCol sm="6" lg="3">
-      <CWidgetDropdown color="info" header="23" text="Поддключенные ЖК">
+      <CWidgetDropdown color="info" header="23" text="Подключенные ЖК">
         <template #default>
           <CDropdown
             color="transparent p-0"
