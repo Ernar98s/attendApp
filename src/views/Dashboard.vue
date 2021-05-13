@@ -20,7 +20,7 @@
                   horizontal
                   label="Действие на выбор"
                   :value.sync="action_switcher"
-                  :options="['Не выбрано ничего','Включить отмеченные','Отключить отмеченные']"
+                  :options="['Не выбрано','Включить отмеченные','Отключить отмеченные']"
                   v-on:change="actionSwitcher()"
                   class="col-4"
               />
