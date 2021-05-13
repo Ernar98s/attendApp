@@ -9,9 +9,6 @@
         </CCardHeader>
         <CCardBody>
           <pre>
-          /**
-            *{{setting}}
-            */
           </pre>
           <CSelect
               horizontal
