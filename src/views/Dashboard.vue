@@ -154,32 +154,32 @@
             <CInput type="text" v-model="setting.aptoroffice" label="Квартира" horizontal
                     placeholder="Свой вариант"/>
             <CSelect horizontal label="Юр./физ. лицо" :value.sync="setting.iscompany" :options="types"/>
-            <CInput type="text" description="ФИО владельца" v-model="setting.ownername" label="ownername" horizontal
-                    placeholder="ownername"/>
-            <CInput type="text" description="Контакты" v-model="setting.ownercontacts" label="ownercontacts"
+            <CInput type="text" v-model="setting.ownername" label="ФИО" horizontal
+                    />
+            <CInput type="text" v-model="setting.ownercontacts" label="Контакты"
                     horizontal
-                    placeholder="ownercontacts"/>
-            <CInput type="text" description="ИИН/БИН" v-model="setting.ownerID" label="ownerID" horizontal
-                    placeholder="ownerID"/>
-            <CInput type="text" description="Район" v-model="setting.district" label="district" horizontal
-                    placeholder="district"/>
-            <CInput type="text" description="Вид здания" v-model="setting.typeofbuilding" label="typeofbuilding"
+                    />
+            <CInput type="text" v-model="setting.ownerID" label="ИИН/БИН" horizontal
+                    />
+            <CInput type="text" v-model="setting.district" label="Район" horizontal
+                    />
+            <CInput type="text" v-model="setting.typeofbuilding" label="Вид здания"
                     horizontal
-                    placeholder="typeofbuilding"/>
-            <CInput type="text" description="Номер здания" v-model="setting.buildingnum" label="buildingnum" horizontal
-                    placeholder="buildingnum"/>
-            <CInput type="text" description="Название здания" v-model="setting.buildingname" label="buildingname"
+                    />
+            <CInput type="text" v-model="setting.buildingnum" label="Номер здания" horizontal
+                    />
+            <CInput type="text" v-model="setting.buildingname" label="Название здания"
                     horizontal
-                    placeholder="buildingname"/>
-            <CInput type="text" description="ID Мастера" v-model="setting.masterID" label="masterID" horizontal
-                    placeholder="masterID"/>
-            <CInput type="text" description="ID Мастер Хаба" v-model="setting.masterhubID" label="masterhubID" horizontal
-                    placeholder="masterhubID"/>
-            <CInput type="text" description="Номер договора" v-model="setting.ownercontacts" label="Номер договора"
+                    />
+            <CInput type="text" v-model="setting.masterID" label="ID Мастера" horizontal
+                    />
+            <CInput type="text" v-model="setting.masterhubID" label="ID Мастер Хаба" horizontal
+                    />
+            <CInput type="text" v-model="setting.ownercontacts" label="Номер договора"
                     horizontal
-                    placeholder="Номер договора"/>
-            <CInput type="text" description="ИИН/БИН" v-model="setting.ownerID" label="ИИН/БИН" horizontal
-                    placeholder="ИИН/БИН"/>
+                    />
+            <CInput type="text" v-model="setting.ownerID" label="ИИН/БИН" horizontal
+                    />
             <CSelect horizontal label="Тип оплаты" :value.sync="setting.payment" :options="payments"/>
             <CButton color="success" type="submit">
               Изменить
@@ -227,6 +227,7 @@ export default {
       tableItems: [],
       tableFields: [
         {key: "select", label: "Выбор", sorter: false, filter: false},
+        {key: "status", label: "Статус клапана", filter: false},
         {key: "city", label: "Город "},
         {key: "district", label: "Район ", _classes: "text-center"},
         {key: "street", label: "Улица "},
@@ -237,7 +238,6 @@ export default {
         {key: "floor", label: "Этаж"},
         {key: "aptoroffice", label: "Кв/офис"},
         {key: "valveID", label: "ID клапана"},
-        {key: "status", label: "Статус клапана", filter: false},
         {key: "settings", label: "Действия", sorter: false, filter: false},
       ],
       setting: {},
