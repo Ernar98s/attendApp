@@ -133,50 +133,48 @@
         <CCardBody>
           <CForm v-on:submit="submitForm()">
             <CSelect horizontal label="Город" :value.sync="setting.city" :options="cities"/>
-            <CInput type="text" description="Свой вариант" v-model="setting.city" label="Город" horizontal
-                    placeholder="Город"/>
+            <CInput type="text" v-model="setting.city" label="Город" horizontal
+                    placeholder="Свой вариант"/>
             <CSelect horizontal label="Улица" :value.sync="setting.street" :options="streets"/>
-            <CInput type="text" description="Свой вариант" v-model="setting.street" label="Улица" horizontal
-                    placeholder="Улица"/>
+            <CInput type="text" v-model="setting.street" label="Улица" horizontal
+                    placeholder="Свой вариант"/>
             <CSelect horizontal label="Дом" :value.sync="setting.house" :options="houses"/>
-            <CInput type="text" description="Свой вариант" v-model="setting.house" label="Дом" horizontal
-                    placeholder="Дом"/>
+            <CInput type="text" v-model="setting.house" label="Дом" horizontal
+                    placeholder="Свой вариант"/>
             <CSelect horizontal label="Подъезд" :value.sync="setting.entrancenum" :options="entrances"/>
-            <CInput type="text" description="Свой вариант" v-model="setting.entrancenum" label="Подъезд" horizontal
-                    placeholder="Подъезд"/>
+            <CInput type="text" v-model="setting.entrancenum" label="Подъезд" horizontal
+                    placeholder="Свой вариант"/>
             <CSelect horizontal label="Шахта" :value.sync="setting.shaftnum" :options="shaftnums"/>
-            <CInput type="text" description="Свой вариант" v-model="setting.shaftnum" label="Шахта" horizontal
-                    placeholder="Шахта"/>
+            <CInput type="text" v-model="setting.shaftnum" label="Шахта" horizontal
+                    placeholder="Свой вариант"/>
             <CSelect horizontal label="Этаж" :value.sync="setting.floor" :options="floors"/>
-            <CInput type="text" description="Свой вариант" v-model="setting.floor" label="Этаж" horizontal
-                    placeholder="Этаж"/>
+            <CInput type="text" v-model="setting.floor" label="Этаж" horizontal
+                    placeholder="Свой вариант"/>
             <CSelect horizontal label="Квартира" :value.sync="setting.aptoroffice" :options="aptoroffices"/>
-            <CInput type="text" description="Свой вариант" v-model="setting.aptoroffice" label="Квартира" horizontal
-                    placeholder="Квартира"/>
-            <CSelect horizontal label="Тип лицо" :value.sync="setting.iscompany" :options="types"/>
-            <CInput type="text" description="ownername" v-model="setting.ownername" label="ownername" horizontal
+            <CInput type="text" v-model="setting.aptoroffice" label="Квартира" horizontal
+                    placeholder="Свой вариант"/>
+            <CSelect horizontal label="Юр./физ. лицо" :value.sync="setting.iscompany" :options="types"/>
+            <CInput type="text" description="ФИО владельца" v-model="setting.ownername" label="ownername" horizontal
                     placeholder="ownername"/>
-            <CInput type="text" description="ownercontacts" v-model="setting.ownercontacts" label="ownercontacts"
+            <CInput type="text" description="Контакты" v-model="setting.ownercontacts" label="ownercontacts"
                     horizontal
                     placeholder="ownercontacts"/>
-            <CInput type="text" description="ownerID" v-model="setting.ownerID" label="ownerID" horizontal
+            <CInput type="text" description="ИИН/БИН" v-model="setting.ownerID" label="ownerID" horizontal
                     placeholder="ownerID"/>
-            <CInput type="text" description="district" v-model="setting.district" label="district" horizontal
+            <CInput type="text" description="Район" v-model="setting.district" label="district" horizontal
                     placeholder="district"/>
-            <CInput type="text" description="typeofbuilding" v-model="setting.typeofbuilding" label="typeofbuilding"
+            <CInput type="text" description="Вид здания" v-model="setting.typeofbuilding" label="typeofbuilding"
                     horizontal
                     placeholder="typeofbuilding"/>
-            <CInput type="text" description="buildingnum" v-model="setting.buildingnum" label="buildingnum" horizontal
+            <CInput type="text" description="Номер здания" v-model="setting.buildingnum" label="buildingnum" horizontal
                     placeholder="buildingnum"/>
-            <CInput type="text" description="buildingname" v-model="setting.buildingname" label="buildingname"
+            <CInput type="text" description="Название здания" v-model="setting.buildingname" label="buildingname"
                     horizontal
                     placeholder="buildingname"/>
-            <CInput type="text" description="masterID" v-model="setting.masterID" label="masterID" horizontal
+            <CInput type="text" description="ID Мастера" v-model="setting.masterID" label="masterID" horizontal
                     placeholder="masterID"/>
-            <CInput type="text" description="masterhubID" v-model="setting.masterhubID" label="masterhubID" horizontal
+            <CInput type="text" description="ID Мастер Хаба" v-model="setting.masterhubID" label="masterhubID" horizontal
                     placeholder="masterhubID"/>
-            <CInput type="text" description="contract" v-model="setting.contract" label="contract" horizontal
-                    placeholder="contract"/>
             <CInput type="text" description="Номер договора" v-model="setting.ownercontacts" label="Номер договора"
                     horizontal
                     placeholder="Номер договора"/>
@@ -184,7 +182,7 @@
                     placeholder="ИИН/БИН"/>
             <CSelect horizontal label="Тип оплаты" :value.sync="setting.payment" :options="payments"/>
             <CButton color="success" type="submit">
-              Добавить
+              Изменить
             </CButton>
           </CForm>
         </CCardBody>
