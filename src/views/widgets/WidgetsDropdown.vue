@@ -10,10 +10,7 @@
             <template #toggler-content>
               <CIcon name="cil-settings"/>
             </template>
-            <CDropdownItem>Action</CDropdownItem>
-            <CDropdownItem>Another action</CDropdownItem>
-            <CDropdownItem>Something else here...</CDropdownItem>
-            <CDropdownItem disabled>Disabled action</CDropdownItem>
+            <CDropdownItem>Открыть список</CDropdownItem>f
           </CDropdown>
         </template>
         <template #footer>
@@ -40,10 +37,7 @@
             <template #toggler-content>
               <CIcon name="cil-location-pin"/>
             </template>
-            <CDropdownItem>Action</CDropdownItem>
-            <CDropdownItem>Another action</CDropdownItem>
-            <CDropdownItem>Something else here...</CDropdownItem>
-            <CDropdownItem disabled>Disabled action</CDropdownItem>
+            <CDropdownItem>Открыть список</CDropdownItem>
           </CDropdown>
         </template>
         <template #footer>
@@ -74,10 +68,7 @@
             <template #toggler-content>
               <CIcon name="cil-settings"/>
             </template>
-            <CDropdownItem>Action</CDropdownItem>
-            <CDropdownItem>Another action</CDropdownItem>
-            <CDropdownItem>Something else here...</CDropdownItem>
-            <CDropdownItem disabled>Disabled action</CDropdownItem>
+            <CDropdownItem>Открыть список</CDropdownItem>
           </CDropdown>
         </template>
         <template #footer>
@@ -108,10 +99,7 @@
             <template #toggler-content>
              <CIcon name="cil-settings"/>
             </template>
-            <CDropdownItem>Action</CDropdownItem>
-            <CDropdownItem>Another action</CDropdownItem>
-            <CDropdownItem>Something else here...</CDropdownItem>
-            <CDropdownItem disabled>Disabled action</CDropdownItem>
+            <CDropdownItem>Открыть список</CDropdownItem>
           </CDropdown>
         </template>
         <template #footer>
