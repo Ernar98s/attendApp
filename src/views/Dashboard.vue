@@ -93,13 +93,12 @@
                 {{ item.valveID }}
               </td>
               <td slot="status" slot-scope="{ item }">
-                <CBadge v-if="item.status==0" color="danger">
+                <CBadge v-if="item.status==0" :color="danger">
                   выключен
                 </CBadge
                 >
-                <CBadge v-else-if="item.status==1" color="success">включен</CBadge>
-                <CBadge v-else-if="item.status==2" color="warning">нет данных</CBadge>
-                <CBadge v-else color="info">не известно</CBadge>
+                <CBadge v-else-if="item.status==1" :color="success">включен</CBadge>
+                <CBadge v-else-if="item.status==2" :color="warning">нет данных</CBadge>
                 <br/>
                 <CSwitch
                     class="mt-1"
