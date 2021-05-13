@@ -10,7 +10,7 @@
             <template #toggler-content>
               <CIcon name="cil-settings"/>
             </template>
-            <CDropdownItem>Открыть список</CDropdownItem>f
+            <CDropdownItem>Открыть список</CDropdownItem>
           </CDropdown>
         </template>
         <template #footer>
