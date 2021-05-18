@@ -7,10 +7,10 @@
             <CCard class="p-4">
               <CCardBody>
                 <form v-on:submit="loginAuth">
-                  <h1>Login</h1>
-                  <p class="text-muted">Sign In to your account</p>
+                  <h1>Вход</h1>
+                  <p class="text-muted">Введите свои данные, чтобы зайти в Ваш аккаунт</p>
                   <CInput
-                      placeholder="Username"
+                      placeholder="Логин"
                       autocomplete="username email"
                       required
                       v-model="email"
@@ -20,7 +20,7 @@
                     </template>
                   </CInput>
                   <CInput
-                      placeholder="Password"
+                      placeholder="Пароль"
                       type="password"
                       autocomplete="curent-password"
                       required
@@ -32,11 +32,11 @@
                   </CInput>
                   <CRow>
                     <CCol col="6" class="text-left">
-                      <CButton type="submit" color="primary" class="px-4">Login</CButton>
+                      <CButton type="submit" color="primary" class="px-4">Войти</CButton>
                     </CCol>
                     <CCol col="6" class="text-right">
-                      <CButton color="link" class="px-0">Forgot password?</CButton>
-                      <CButton color="link" class="d-lg-none">Register now!</CButton>
+
+
                     </CCol>
                   </CRow>
                 </form>
@@ -51,13 +51,7 @@
               <CCardBody>
                 <h2>Регистрация</h2>
                 <p>Обратитесь к главному менеджеру для регистрации.</p>
-                <CButton
-                    color="light"
-                    variant="outline"
-                    size="lg"
-                >
-                  Register Now!
-                </CButton>
+
               </CCardBody>
             </CCard>
           </CCardGroup>
