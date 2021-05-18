@@ -6,7 +6,7 @@ export default [
         _name: 'CSidebarNavItem',
         name: 'Клапаны',
         to: '/dashboard',
-        icon: 'cil-bath',
+        icon: 'fas fa-faucet',
       },
       {
         _name: 'CSidebarNavItem',
