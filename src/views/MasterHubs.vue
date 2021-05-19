@@ -112,28 +112,28 @@
         <CCardBody>
           <CForm v-on:submit="submitForm()">
             <CSelect horizontal label="Город" :value.sync="setting.city" :options="cities"/>
-            <CInput type="text" description="Свой вариант" v-model="setting.city" label="Город" horizontal
-                    placeholder="Город"/>
-            <CInput type="text" description="district" v-model="setting.district" label="district" horizontal
-                    placeholder="district"/>
+            <CInput type="text" v-model="setting.city" label="Свой вариант" horizontal
+                    />
+            <CInput type="text" v-model="setting.district" label="Район" horizontal
+                    />
             <CSelect horizontal label="Улица" :value.sync="setting.street" :options="streets"/>
-            <CInput type="text" description="Свой вариант" v-model="setting.street" label="Улица" horizontal
-                    placeholder="Улица"/>
-            <CInput type="text" description="typeofbuilding" v-model="setting.typeofbuilding" label="typeofbuilding"
+            <CInput type="text" v-model="setting.street" label="Свой вариант" horizontal
+                    />
+            <CInput type="text" v-model="setting.typeofbuilding" label="Тип здания"
                     horizontal
-                    placeholder="typeofbuilding"/>
+                    />
 
-            <CInput type="text" description="buildingnum " v-model="setting.buildingnum" label="buildingnum"
+            <CInput type="text" v-model="setting.buildingnum" label="Номер здания"
                     horizontal
-                    placeholder="buildingnum"/>
+                    />
 
 
             <CSelect horizontal label="Подъезд" :value.sync="setting.entrancenum" :options="entrances"/>
-            <CInput type="text" description="Свой вариант" v-model="setting.entrancenum" label="Подъезд" horizontal
-                    placeholder="Подъезд"/>
-            <CInput type="text" description="buildingname" v-model="setting.buildingname" label="buildingname"
+            <CInput type="text" v-model="setting.entrancenum" label="Свой вариант" horizontal
+                    />
+            <CInput type="text" v-model="setting.buildingname" label="Свой вариант"
                     horizontal
-                    placeholder="buildingname"/>
+                    />
 
             <CButton color="success" type="submit">
               Добавить
