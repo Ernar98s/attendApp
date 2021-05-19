@@ -6,7 +6,7 @@
       @update:show="(value) => $store.commit('set', ['sidebarShow', value])"
   >
     <CSidebarBrand class="d-md-down-none" to="/">
-      <img src="/logo.jpg" width="100%" style="padding: 15px;">
+      <img src="/logo.png" width="100%" style="padding: 15px;">
     </CSidebarBrand>
 
     <CRenderFunction flat :content-to-render="$options.nav"/>
