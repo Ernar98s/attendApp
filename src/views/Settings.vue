@@ -74,11 +74,11 @@ export default {
       action_switcher: '',
       action_switcher_city: '',
       id: "",
-      cities: [{value: 1, label: 'Павлодар'}, {value: 2, label: 'Астана'}],
-      districts: [{value: 1, label: 'Сарыаркинский'}, {value: 2, label: 'Есиль'}],
-      streets: [{value: 1, label: 'Сарыаркинский'}, {value: 2, label: 'Есиль'}],
-      buildings: [{value: 1, label: 'Сарыаркинский'}, {value: 2, label: 'Есиль'}],
-      houses: [{value: 1, label: '1'}, {value: 2, label: '2'}],
+      cities: [{value: 1, label: 'Алматы'}, {value: 2, label: 'Астана'}],
+      districts: [{value: 1, label: 'Бостандыкский'}, {value: 2, label: 'Есиль'}],
+      streets: [{value: 1, label: 'Гагарина'}, {value: 2, label: 'Кунаева'}],
+      buildings: [{value: 1, label: 'Гагарин Парк'}, {value: 2, label: 'Водно-Зеленый бульвар'}],
+      houses: [{value: 1, label: '271'}, {value: 2, label: '12/2'}],
       entrances: [{value: 1, label: '1'}, {value: 2, label: '2'}],
 
     };
