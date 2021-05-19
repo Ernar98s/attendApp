@@ -126,33 +126,33 @@
         <CCardBody>
           <CForm v-on:submit="submitForm()">
             <CSelect horizontal label="Город" :value.sync="setting.city" :options="cities"/>
-            <CInput type="text" description="Свой вариант" v-model="setting.city" label="Город" horizontal
-                    placeholder="Город"/>
+            <CInput type="text" v-model="setting.city" label="Свой вариант" horizontal
+                    />
             <CSelect horizontal label="Улица" :value.sync="setting.street" :options="streets"/>
-            <CInput type="text" description="Свой вариант" v-model="setting.street" label="Улица" horizontal
-                    placeholder="Улица"/>
+            <CInput type="text" v-model="setting.street" label="Свой вариант" horizontal
+                    />
             <CSelect horizontal label="Подъезд" :value.sync="setting.entrancenum" :options="entrances"/>
-            <CInput type="text" description="Свой вариант" v-model="setting.entrancenum" label="Подъезд" horizontal
-                    placeholder="Подъезд"/>
+            <CInput type="text" v-model="setting.entrancenum" label="Свой вариант" horizontal
+                    />
             <CSelect horizontal label="Шахта" :value.sync="setting.shaftnum" :options="shaftnums"/>
-            <CInput type="text" description="Свой вариант" v-model="setting.shaftnum" label="Шахта" horizontal
-                    placeholder="Шахта"/>
+            <CInput type="text" v-model="setting.shaftnum" label="Свой вариант" horizontal
+                    />
             <CSelect horizontal label="Этаж" :value.sync="setting.floor" :options="floors"/>
-            <CInput type="text" description="Свой вариант" v-model="setting.floor" label="Этаж" horizontal
-                    placeholder="Этаж"/>
-            <CInput type="text" description="district" v-model="setting.district" label="district" horizontal
-                    placeholder="district"/>
-            <CInput type="text" description="typeofbuilding" v-model="setting.typeofbuilding" label="typeofbuilding"
+            <CInput type="text" v-model="setting.floor" label="Свой вариант" horizontal
+                    />
+            <CInput type="text" v-model="setting.district" label="Район" horizontal
+                    />
+            <CInput type="text" v-model="setting.typeofbuilding" label="Тип здания"
                     horizontal
-                    placeholder="typeofbuilding"/>
-            <CInput type="text" description="buildingname" v-model="setting.buildingname" label="buildingname"
+                    />
+            <CInput type="text" v-model="setting.buildingname" label="Название здания"
                     horizontal
-                    placeholder="buildingname"/>
-            <CInput type="text" description="buildingnum " v-model="setting.buildingnum" label="buildingnum"
+                    />
+            <CInput type="text" description="buildingnum " v-model="setting.buildingnum" label="Номер дома"
                     horizontal
-                    placeholder="buildingnum"/>
-            <CInput type="text" description="masterhubID" v-model="setting.masterhubID" label="masterhubID" horizontal
-                    placeholder="masterhubID"/>
+                    />
+            <CInput type="text" v-model="setting.masterhubID" label="ID Мастера" horizontal
+                    />
             <CButton color="success" type="submit">
               Добавить
             </CButton>
