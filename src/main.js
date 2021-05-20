@@ -8,7 +8,15 @@ import store from './store'
 import Auth from './auth.js';
 import axios from 'axios';
 window.axios = require('axios');
+import { library, config } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon, FontAwesomeLayers, FontAwesomeLayersText } from '@fortawesome/vue-fontawesome'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+config.autoAddCss = false
+library.add(fas)
 
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+Vue.component('font-awesome-layers', FontAwesomeLayers)
+Vue.component('font-awesome-layers-text', FontAwesomeLayersText)
 axios.defaults.baseURL = 'https://oceanmind.cleverest.tech'
 window.auth = new Auth();
 Vue.config.performance = true

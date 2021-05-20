@@ -51,11 +51,11 @@
                 />
               </template>
               <td slot="select" slot-scope="{ item,index  }">
-                <CInputCheckbox
-                    :value.sync="item.select"
-                    custom
-                    inline
-                    @change="actionSelectChange(index)"
+                <input type="checkbox"
+                       v-model="item.select"
+                       custom
+                       inline
+                       @change="actionSelectChange(index)"
                 />
               </td>
               <td slot="city" slot-scope="{ item }">
