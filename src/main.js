@@ -9,7 +9,7 @@ import Auth from './auth.js';
 import axios from 'axios';
 window.axios = require('axios');
 
-axios.defaults.baseURL = 'https://goofy-pasteur-13a27c.netlify.app'
+axios.defaults.baseURL = 'https://oceanmind.cleverest.tech'
 window.auth = new Auth();
 Vue.config.performance = true
 Vue.use(CoreuiVue)
