@@ -76,21 +76,15 @@
               <td slot="numHouse" slot-scope="{ item }">
                 {{ item.entrancenum }}
               </td>
-              <td slot="status" slot-scope="{ item }">
-                <CBadge v-if="item.status==0" color="danger">
-                  выключен
-                </CBadge
-                >
-                <CBadge v-else-if="item.status==1" color="success">включен</CBadge>
-                <CBadge v-else-if="item.status==2" color="warning">нет данных</CBadge>
-                <CBadge v-else color="info">не известно</CBadge>
+              <td slot="status" slot-scope="{ item,index}">
+                <span class="badge" :class="'badge-'+colorStatus(item.status)">{{ textStatus(item.status) }}</span>
                 <br/>
                 <CSwitch
                     class="mt-1"
                     color="primary"
                     :checked.sync="item.status==1"
                     :value="item.status"
-                    @update:checked="actionStatusChange(item)"
+                    @update:checked="actionStatusChange(item,index)"
                 />
               </td>
               <td slot="settings" slot-scope="{ item, index }">
@@ -310,18 +304,21 @@ export default {
         this.getResults(0);
       }
     },
-    actionStatusChange(item) {
+    actionStatusChange(item, index) {
       let app = this;
+      var status = app.tableItems[index].status == 1 ? '/turnoff/' : '/turnon/';
+      var status_id = app.tableItems[index].status == 1 ? '0' : '1';
       axios.defaults.headers.common['Authorization'] = 'Bearer ' + window.auth.token;
       axios(
           {
             method: 'post',
-            url: '/turnon/',
+            url: status,
             data: qs.stringify({
               device_id: item.valveID,
             }),
           })
           .then(({data}) => {
+            app.tableItems[index].status = status_id;
             app.success = true;
             app.alert_message = data.responce;
             setTimeout(function () {
@@ -331,6 +328,32 @@ export default {
           }).catch(function (error) {
 
       })
+    },
+    colorStatus(value) {
+      var color = 'danger';
+      if (value == 0) {
+        color = 'danger';
+      } else if (value == 1) {
+        color = 'success';
+      } else if (value == 2) {
+        color = 'warning';
+      } else {
+        color = 'warning';
+      }
+      return color;
+    },
+    textStatus(value) {
+      var color = 'Выключен';
+      if (value == 0) {
+        color = 'Выключен';
+      } else if (value == 1) {
+        color = 'Включен';
+      } else if (value == 2) {
+        color = 'нет данных';
+      } else {
+        color = 'Выключен';
+      }
+      return color;
     },
     getResults(city) {
       let app = this;

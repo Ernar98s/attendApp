@@ -89,21 +89,15 @@
               <td slot="id" slot-scope="{ item }">
                 {{ item.masterID }}
               </td>
-              <td slot="status" slot-scope="{ item }">
-                <CBadge v-if="item.status==0" color="danger">
-                  выключен
-                </CBadge
-                >
-                <CBadge v-else-if="item.status==1" color="success">включен</CBadge>
-                <CBadge v-else-if="item.status==2" color="warning">нет данных</CBadge>
-                <CBadge v-else color="info">не известно</CBadge>
+              <td slot="status" slot-scope="{ item,status }">
+                <<span class="badge" :class="'badge-'+colorStatus(item.status)">{{ textStatus(item.status) }}</span>
                 <br/>
                 <CSwitch
                     class="mt-1"
                     color="primary"
                     :checked.sync="item.status==1"
                     :value="item.status"
-                    @update:checked="actionStatusChange(item)"
+                    @update:checked="actionStatusChange(item,index)"
                 />
               </td>
               <td slot="settings" slot-scope="{ item, index }">
@@ -127,32 +121,32 @@
           <CForm v-on:submit="submitForm()">
             <CSelect horizontal label="Город" :value.sync="setting.city" :options="cities"/>
             <CInput type="text" v-model="setting.city" label="Свой вариант" horizontal
-                    />
+            />
             <CSelect horizontal label="Улица" :value.sync="setting.street" :options="streets"/>
             <CInput type="text" v-model="setting.street" label="Свой вариант" horizontal
-                    />
+            />
             <CSelect horizontal label="Подъезд" :value.sync="setting.entrancenum" :options="entrances"/>
             <CInput type="text" v-model="setting.entrancenum" label="Свой вариант" horizontal
-                    />
+            />
             <CSelect horizontal label="Шахта" :value.sync="setting.shaftnum" :options="shaftnums"/>
             <CInput type="text" v-model="setting.shaftnum" label="Свой вариант" horizontal
-                    />
+            />
             <CSelect horizontal label="Этаж" :value.sync="setting.floor" :options="floors"/>
             <CInput type="text" v-model="setting.floor" label="Свой вариант" horizontal
-                    />
+            />
             <CInput type="text" v-model="setting.district" label="Район" horizontal
-                    />
+            />
             <CInput type="text" v-model="setting.typeofbuilding" label="Тип здания"
                     horizontal
-                    />
+            />
             <CInput type="text" v-model="setting.buildingname" label="Название здания"
                     horizontal
-                    />
+            />
             <CInput type="text" description="buildingnum " v-model="setting.buildingnum" label="Номер дома"
                     horizontal
-                    />
+            />
             <CInput type="text" v-model="setting.masterhubID" label="ID Мастера" horizontal
-                    />
+            />
             <CButton color="success" type="submit">
               Добавить
             </CButton>
@@ -178,7 +172,7 @@ export default {
   name: "Master",
   data() {
     return {
-      all_select:false,
+      all_select: false,
       warning: false,
       success: false,
       alert_message: '',
@@ -248,7 +242,7 @@ export default {
             app.warningModal = false;
             app.success = true;
             app.alert_message = 'Успешно добавлено';
-            app.setting={};
+            app.setting = {};
             setTimeout(function () {
               app.success = false;
             }, 3000)
@@ -330,18 +324,21 @@ export default {
         this.getResults(0);
       }
     },
-    actionStatusChange(item) {
+    actionStatusChange(item, index) {
       let app = this;
+      var status = app.tableItems[index].status == 1 ? '/turnoff/' : '/turnon/';
+      var status_id = app.tableItems[index].status == 1 ? '0' : '1';
       axios.defaults.headers.common['Authorization'] = 'Bearer ' + window.auth.token;
       axios(
           {
             method: 'post',
-            url: '/turnon/',
+            url: status,
             data: qs.stringify({
-              device_id: item.masterID,
+              device_id: item.valveID,
             }),
           })
           .then(({data}) => {
+            app.tableItems[index].status = status_id;
             app.success = true;
             app.alert_message = data.responce;
             setTimeout(function () {
@@ -351,6 +348,32 @@ export default {
           }).catch(function (error) {
 
       })
+    },
+    colorStatus(value) {
+      var color = 'danger';
+      if (value == 0) {
+        color = 'danger';
+      } else if (value == 1) {
+        color = 'success';
+      } else if (value == 2) {
+        color = 'warning';
+      } else {
+        color = 'warning';
+      }
+      return color;
+    },
+    textStatus(value) {
+      var color = 'Выключен';
+      if (value == 0) {
+        color = 'Выключен';
+      } else if (value == 1) {
+        color = 'Включен';
+      } else if (value == 2) {
+        color = 'нет данных';
+      } else {
+        color = 'Выключен';
+      }
+      return color;
     },
     getResults(city) {
       let app = this;
