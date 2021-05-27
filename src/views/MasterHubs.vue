@@ -5,7 +5,7 @@
         <CCard class="clapans">
           <CCardHeader>
             <div class="d-flex aligin-items-center justify-content-between">
-              <span>Мастеры</span>
+              <span>Мастер Хабы</span>
               <CButton color="success" @click="warningModal = !warningModal">
                 Добавить
               </CButton>
@@ -180,8 +180,8 @@ export default {
       setting: {},
       cities: [{value: 'Павлодар', label: 'Павлодар'}, {value: 'Астана', label: 'Астана'}],
       districts: [{value: 'Сарыаркинский', label: 'Сарыаркинский'}, {value: 'Есиль', label: 'Есиль'}],
-      streets: [{value: 'Сарыаркинский', label: 'Сарыаркинский'}, {value: 'Есиль', label: 'Есиль'}],
-      buildings: [{value: 'Сарыаркинский', label: 'Сарыаркинский'}, {value: 'Есиль', label: 'Есиль'}],
+      streets: [{value: 'Сарыаркинский', label: 'Кабанбай батыра'}, {value: 'Есиль', label: 'Туран'}],
+      buildings: [{value: 'Сарыаркинский', label: 'ЖК HighWill'}, {value: 'Есиль', label: 'ЖК Инфинити'}],
       houses: [{value: 1, label: '1'}, {value: 2, label: '2'}],
       entrances: [{value: 1, label: '1'}, {value: 2, label: '2'}],
       aptoroffices: [{value: 1, label: '1'}, {value: 2, label: '2'}],
