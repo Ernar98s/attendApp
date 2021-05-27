@@ -57,6 +57,17 @@
                        inline
                        @change="actionSelectChange(index)"
                 />
+              <td slot="status" slot-scope="{ item,index}">
+                <span class="badge" :class="'badge-'+colorStatus(item.status)">{{ textStatus(item.status) }}</span>
+                <br/>
+                <CSwitch
+                    class="mt-1"
+                    color="primary"
+                    :checked.sync="item.status==1"
+                    :value="item.status"
+                    @update:checked="actionStatusChange(item,index)"
+                />
+              </td>                
               </td>
               <td slot="city" slot-scope="{ item }">
                 {{ item.city }}
@@ -76,17 +87,7 @@
               <td slot="numHouse" slot-scope="{ item }">
                 {{ item.entrancenum }}
               </td>
-              <td slot="status" slot-scope="{ item,index}">
-                <span class="badge" :class="'badge-'+colorStatus(item.status)">{{ textStatus(item.status) }}</span>
-                <br/>
-                <CSwitch
-                    class="mt-1"
-                    color="primary"
-                    :checked.sync="item.status==1"
-                    :value="item.status"
-                    @update:checked="actionStatusChange(item,index)"
-                />
-              </td>
+
               <td slot="settings" slot-scope="{ item, index }">
               <span
                   style="white-space: nowrap; cursor: pointer"
