@@ -74,7 +74,7 @@ function configRoutes() {
         {
             path: '/',
             redirect: '/dashboard',
-            name: 'Home',
+            name: 'Главная',
             component: TheContainer,
             children: [
                 {
@@ -89,12 +89,12 @@ function configRoutes() {
                 },
                 {
                     path: 'master',
-                    name: 'Master',
+                    name: 'Мастера',
                     component: Master
                 },
                 {
                     path: 'master-hub',
-                    name: 'MasterHub',
+                    name: 'Мастер Хабы',
                     component: MasterHubs
                 },
                 {
