@@ -22,7 +22,7 @@
 
 
       <li class="c-sidebar-nav-item">
-        <router-link :to="'#/master'" class="c-sidebar-nav-link" target="_self">
+        <router-link :to="'/master'" class="c-sidebar-nav-link" target="_self">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" class="c-sidebar-nav-icon">
             <path fill="var(--ci-primary-color, currentColor)"
                   d="M404,344a75.9,75.9,0,0,0-60.208,29.7L179.869,280.664a75.693,75.693,0,0,0,0-49.328L343.792,138.3a75.937,75.937,0,1,0-13.776-28.976L163.3,203.946a76,76,0,1,0,0,104.108l166.717,94.623A75.991,75.991,0,1,0,404,344Zm0-296a44,44,0,1,1-44,44A44.049,44.049,0,0,1,404,48ZM108,300a44,44,0,1,1,44-44A44.049,44.049,0,0,1,108,300ZM404,464a44,44,0,1,1,44-44A44.049,44.049,0,0,1,404,464Z"
@@ -39,7 +39,8 @@
             <path fill="var(--ci-primary-color, currentColor)"
                   d="M32,16V496H480V16ZM448,304H342.111l-32,64H201.889l-32-64H64V144H448Zm0-256v64H64V48ZM64,464V336h86.111l32,64H329.889l32-64H448V464Z"
                   class="ci-primary"></path>
-          </svg><!----> Мастер Хабы <!----></router-link>
+          </svg>
+          Мастер Хабы <!----></router-link>
       </li>
       <li class="c-sidebar-nav-item">
         <router-link :to="'/settings'" class="c-sidebar-nav-link">
