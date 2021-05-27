@@ -57,6 +57,7 @@
                        inline
                        @change="actionSelectChange(index)"
                 />
+              </td>               
               <td slot="status" slot-scope="{ item,index}">
                 <span class="badge" :class="'badge-'+colorStatus(item.status)">{{ textStatus(item.status) }}</span>
                 <br/>
@@ -66,8 +67,7 @@
                     :checked.sync="item.status==1"
                     :value="item.status"
                     @update:checked="actionStatusChange(item,index)"
-                />
-              </td>                
+                />       
               </td>
               <td slot="city" slot-scope="{ item }">
                 {{ item.city }}
