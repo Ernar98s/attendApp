@@ -58,7 +58,7 @@
                        @change="actionSelectChange(index)"
                 />
               <td slot="status" slot-scope="{ item,status }">
-                <<span class="badge" :class="'badge-'+colorStatus(item.status)">{{ textStatus(item.status) }}</span>
+                <span class="badge" :class="'badge-'+colorStatus(item.status)">{{ textStatus(item.status) }}</span>
                 <br/>
                 <CSwitch
                     class="mt-1"
