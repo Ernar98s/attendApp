@@ -12,7 +12,7 @@ export default [
         _name: 'CSidebarNavItem',
         name: 'Мастеры',
         to: '/master',
-        icon: 'cil-share-alt',
+        icon: 'fas fa-network-wired',
       },
       {
         _name: 'CSidebarNavItem',
