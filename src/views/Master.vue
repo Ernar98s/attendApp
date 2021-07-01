@@ -57,7 +57,7 @@
                        inline
                        @change="actionSelectChange(index)"
                 />
-              </td>                            
+              </td>
               <td slot="status" slot-scope="{ item,status }">
                 <span class="badge" :class="'badge-'+colorStatus(item.status)">{{ textStatus(item.status) }}</span>
                 <br/>
@@ -365,12 +365,16 @@ export default {
     },
     textStatus(value) {
       var color = 'Выключен';
-      if (value == 0) {
-        color = 'Выключен';
-      } else if (value == 1) {
-        color = 'Включен';
+      if (value == 1) {
+        color = 'Отключен';
       } else if (value == 2) {
-        color = 'нет данных';
+        color = 'Отключается';
+      } else if (value == 3) {
+        color = 'Сломался';
+      } else if (value == 4) {
+        color = 'Включается';
+      } else if (value == 5) {
+        color = 'Включен';
       } else {
         color = 'Выключен';
       }

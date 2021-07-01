@@ -17,7 +17,7 @@ library.add(fas)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.component('font-awesome-layers', FontAwesomeLayers)
 Vue.component('font-awesome-layers-text', FontAwesomeLayersText)
-axios.defaults.baseURL = 'https://oceanmind.cleverest.tech'
+axios.defaults.baseURL = 'http://oceanmind.cleverest.tech'
 window.auth = new Auth();
 Vue.config.performance = true
 Vue.use(CoreuiVue)

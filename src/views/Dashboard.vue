@@ -7,9 +7,14 @@
           <CCardHeader>
             <div class="d-flex aligin-items-center justify-content-between">
               <span>Клапаны</span>
-              <CButton color="success" @click="warningModal = !warningModal">
-                Добавить
-              </CButton>
+              <div>
+                <CButton color="success" class="mr-2">
+                  Скачать историю клапана в csv
+                </CButton>
+                <CButton color="success" @click="warningModal = !warningModal">
+                  Добавить
+                </CButton>
+              </div>
             </div>
           </CCardHeader
           >
@@ -414,12 +419,16 @@ export default {
     },
     textStatus(value) {
       var color = 'Выключен';
-      if (value == 0) {
-        color = 'Выключен';
-      } else if (value == 1) {
-        color = 'Включен';
+      if (value == 1) {
+        color = 'Отключен';
       } else if (value == 2) {
-        color = 'нет данных';
+        color = 'Отключается';
+      } else if (value == 3) {
+        color = 'Сломался';
+      } else if (value == 4) {
+        color = 'Включается';
+      } else if (value == 5) {
+        color = 'Включен';
       } else {
         color = 'Выключен';
       }
