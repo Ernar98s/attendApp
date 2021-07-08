@@ -370,13 +370,13 @@ function configRoutes() {
 
 router.beforeEach((to, from, next) => {
     if (to.matched.some(record => record.meta.middlewareAuth)) {
-        // if (!window.auth.check()) {
-        //     next({
-        //         path: '/pages/login',
-        //         query: {redirect: to.fullPath}
-        //     });
-        //     return;
-        // }
+        if (!window.auth.check()) {
+            next({
+                path: '/pages/login',
+                query: {redirect: to.fullPath}
+            });
+            return;
+        }
     }
     next();
 })

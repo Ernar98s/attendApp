@@ -6,9 +6,14 @@
           <CCardHeader>
             <div class="d-flex aligin-items-center justify-content-between">
               <span>Мастер Хабы</span>
-              <CButton color="success" @click="warningModal = !warningModal">
-                Добавить
-              </CButton>
+              <div>
+                <CButton color="success" class="mr-2" @click="downloadArray">
+                  Скачать историю клапана в csv
+                </CButton>
+                <CButton color="success" @click="warningModal = !warningModal">
+                  Добавить
+                </CButton>
+              </div>
             </div>
           </CCardHeader>
           <CCardBody>
@@ -25,7 +30,7 @@
               <CSelect
                   horizontal
                   label="Город"
-                  :options="['Алматы', 'Астана']"
+                  :options="cities_name"
                   :value.sync="action_switcher_city"
                   v-on:change="actionSwitcherCity()"
                   class="col-4"
@@ -149,12 +154,16 @@
 </template>
 
 <script>
+import downloadCsv from "download-csv";
+
 const qs = require('qs')
 const axios = require('axios')
 export default {
   name: "MasterHubs",
   data() {
     return {
+      cities_name: '',
+      cities_arr: '',
       all_select: false,
       warning: false,
       success: false,
@@ -192,9 +201,31 @@ export default {
     };
   },
   mounted() {
-    this.getResults(0);
+    let city = auth.cities();
+    this.cities_name = city.cities_name;
+    this.cities_arr = city.cities;
+    this.getResults(1);
   },
   methods: {
+    downloadArray() {
+      const datas = this.tableItems
+      const columns = {
+        select: "Выбор",
+        status: "Статус клапана",
+        city: "Город ",
+        district: "Район ",
+        street: "Улица ",
+        typeofbuilding: "Вид здания",
+        buildingnum: "Номер дома ",
+        entrancenum: "Номер подъезда ",
+        shaftnum: "Номер шахты ",
+        floor: "Этаж",
+        aptoroffice: "Кв/офис",
+        valveID: "ID клапана",
+        settings: "Действия",
+      };
+      downloadCsv(datas, columns);
+    },
     allSelect() {
       let app = this;
       app.isSelect = true;
@@ -299,11 +330,7 @@ export default {
       }
     },
     actionSwitcherCity() {
-      if (this.action_switcher_city == 'Астана') {
-        this.getResults(1);
-      } else {
-        this.getResults(0);
-      }
+      this.getResults(this.cities_arr[this.action_switcher_city]);
     },
     actionStatusChange(item, index) {
       let app = this;
