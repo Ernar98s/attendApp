@@ -112,7 +112,7 @@
                 <span
                     style="white-space: nowrap; cursor: pointer"
                     class="d-flex align-items-center"
-                    @click="warningModal = !warningModal"
+                    @click="showModal(item)"
                 ><CIcon name="cilSettings" class="mr-1"/> Настройки
                 </span>
                 <span
@@ -264,6 +264,10 @@ export default {
     this.getResults(1);
   },
   methods: {
+    showModal(item) {
+      this.warningModal = !this.warningModal;
+      this.setting = item;
+    },
     downloadArray() {
       const datas = this.tableItems
       const columns = {

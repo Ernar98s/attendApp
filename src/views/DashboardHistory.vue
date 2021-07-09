@@ -118,7 +118,7 @@ export default {
       id: this.$route.params.id,
       tableItems: [],
       tableFields: [
-        {key: "ID", label: "ID",},
+        {key: "valveID", label: "ID",},
         {key: "comment", label: "Комметарий"},
         {key: "date", label: "Дата", },
       ],
@@ -131,7 +131,7 @@ export default {
     getResults() {
       let app = this;
       axios.defaults.headers.common['Authorization'] = 'Bearer ' + window.auth.token;
-      axios.get('/getcommentsbyID/'+ app.$route.params.id).then(response => {
+      axios.get('/getvalvecommentsbyID/'+ app.$route.params.id).then(response => {
         app.tableItems = response.data;
         for (var i = 0; i < app.tableItems.length; i++) {
           app.tableItems[i].select = false;
