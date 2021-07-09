@@ -75,7 +75,7 @@
                 />
               </td>
               <td slot="city" slot-scope="{ item }">
-                {{ item.city }}
+                {{ cities_key[item.city] }}
               </td>
               <td slot="district" slot-scope="{ item }">
                 {{ item.district }}
@@ -113,27 +113,27 @@
           <CForm v-on:submit="submitForm()">
             <CSelect horizontal label="Город" :value.sync="setting.city" :options="cities"/>
             <CInput type="text" v-model="setting.city" label="Свой вариант" horizontal
-                    />
+            />
             <CInput type="text" v-model="setting.district" label="Район" horizontal
-                    />
+            />
             <CSelect horizontal label="Улица" :value.sync="setting.street" :options="streets"/>
             <CInput type="text" v-model="setting.street" label="Свой вариант" horizontal
-                    />
+            />
             <CInput type="text" v-model="setting.typeofbuilding" label="Тип здания"
                     horizontal
-                    />
+            />
 
             <CInput type="text" v-model="setting.buildingnum" label="Номер здания"
                     horizontal
-                    />
+            />
 
 
             <CSelect horizontal label="Подъезд" :value.sync="setting.entrancenum" :options="entrances"/>
             <CInput type="text" v-model="setting.entrancenum" label="Свой вариант" horizontal
-                    />
+            />
             <CInput type="text" v-model="setting.buildingname" label="Свой вариант"
                     horizontal
-                    />
+            />
 
             <CButton color="success" type="submit">
               Добавить
@@ -204,6 +204,7 @@ export default {
     let city = auth.cities();
     this.cities_name = city.cities_name;
     this.cities_arr = city.cities;
+    this.cities_key = city.cities_key;
     this.getResults(1);
   },
   methods: {
@@ -224,7 +225,15 @@ export default {
         valveID: "ID клапана",
         settings: "Действия",
       };
-      downloadCsv(datas, columns);
+      const current = new Date();
+      const date = `${current.getDate()}-${current.getMonth() + 1}-${current.getFullYear()}`;
+      let name = '';
+      if (this.action_switcher_city.length >= 1) {
+        name = 'Мастер хабы в городе' + this.action_switcher_city + ' ' + date + '.csv';
+      } else {
+        name = 'Мастер хабы в городе' + ' Алма-Ата ' + date + '.csv';
+      }
+      downloadCsv(datas, columns, name);
     },
     allSelect() {
       let app = this;

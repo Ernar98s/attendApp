@@ -75,7 +75,7 @@
                 />
               </td>
               <td slot="city" slot-scope="{ item }">
-                {{ item.city }}
+                {{ cities_key[item.city] }}
               </td>
               <td slot="district" slot-scope="{ item }">
                 {{ item.district }}
@@ -225,6 +225,7 @@ export default {
     let city = auth.cities();
     this.cities_name = city.cities_name;
     this.cities_arr = city.cities;
+    this.cities_key = city.cities_key;
     this.getResults(1);
   },
   methods: {
@@ -245,7 +246,15 @@ export default {
         valveID: "ID клапана",
         settings: "Действия",
       };
-      downloadCsv(datas, columns);
+      const current = new Date();
+      const date = `${current.getDate()}-${current.getMonth() + 1}-${current.getFullYear()}`;
+      let name = '';
+      if (this.action_switcher_city.length >= 1) {
+        name = 'Мастеры в городе' + this.action_switcher_city + ' ' + date + '.csv';
+      } else {
+        name = 'Мастеры в городе' + ' Алма-Ата ' + date + '.csv';
+      }
+      downloadCsv(datas, columns, name);
     },
     allSelect() {
       let app = this;
