@@ -1,7 +1,7 @@
 <template>
   <CRow>
     <CCol sm="6" lg="3">
-      <CWidgetDropdown color="primary" header="99/123" text="Открыты">
+      <CWidgetDropdown color="primary" header="6" text="Открыты">
         <template #default>
           <CDropdown
             color="transparent p-0"
@@ -27,7 +27,7 @@
       </CWidgetDropdown>
     </CCol>
     <CCol sm="6" lg="3">
-      <CWidgetDropdown color="info" header="23" text="Подключенные ЖК">
+      <CWidgetDropdown color="info" header="1" text="Подключенные ЖК">
         <template #default>
           <CDropdown
             color="transparent p-0"
@@ -57,7 +57,7 @@
     <CCol sm="6" lg="3">
       <CWidgetDropdown
         color="warning"
-        header="50"
+        header="0"
         text="Монтажеры"
       >
         <template #default>
@@ -88,7 +88,7 @@
     <CCol sm="6" lg="3">
       <CWidgetDropdown
         color="danger"
-        header="52"
+        header="0"
         text="Не отвечают"
       >
         <template #default>

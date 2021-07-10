@@ -8,12 +8,12 @@
     <template #toggler>
       <CHeaderNavLink>
         <div class="c-avatar">
-          <img src="/avatar.png" class="c-avatar-img"/>
+          <img src="/static/avatar.png" class="c-avatar-img"/>
         </div>
       </CHeaderNavLink>
     </template>
     <CDropdownHeader tag="div" class="text-center" color="light">
-      <strong>Account</strong>
+      <strong>Аккаунт</strong>
     </CDropdownHeader>
 <!--    <CDropdownItem>-->
 <!--      <CIcon name="cil-user"/>-->
