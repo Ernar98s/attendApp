@@ -54,7 +54,7 @@ const Settings = () => import('@/views/Settings')
 // Views - Pages
 const Page404 = () => import('@/views/pages/Page404')
 const Page500 = () => import('@/views/pages/Page500')
-const Login = () => import('@/views/pages/Login')
+// const Login = () => import('@/views/pages/Login')
 const Register = () => import('@/views/pages/Register')
 
 // // Users
