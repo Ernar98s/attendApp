@@ -79,7 +79,7 @@ function configRoutes() {
             children: [
                 {
                     path: 'dashboard',
-                    name: 'Клапаны',
+                    name: 'Посещение',
                     component: Dashboard
                 },
                 {

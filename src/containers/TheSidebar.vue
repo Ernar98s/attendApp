@@ -5,10 +5,7 @@
       :show="show"
       @update:show="(value) => $store.commit('set', ['sidebarShow', value])"
   >
-    <CSidebarBrand class="d-md-down-none" to="/">
-      <img src="/static/logo.png" width="15%" style="padding: 5px;">
-    </CSidebarBrand>
-    <i class="fas fa-faucet"></i>
+
 
     <ul class="c-sidebar-nav h-100 ps" style="position: relative;">
       <li class="c-sidebar-nav-item">
@@ -16,29 +13,12 @@
         <router-link :to="'/dashboard'" aria-current="page"
                      class="router-link-exact-active  c-sidebar-nav-link"
                      target="_self">
-          <font-awesome-icon icon="faucet" :class="'c-sidebar-nav-icon'"/>
-          Клапаны <!----></router-link>
+          <font-awesome-icon icon="check-square" :class="'c-sidebar-nav-icon'"/>
+          Посещение <!----></router-link>
       </li>
 
 
-      <li class="c-sidebar-nav-item">
-        <router-link :to="'/master'" class="c-sidebar-nav-link" target="_self">
-
-          <font-awesome-icon icon="network-wired" :class="'c-sidebar-nav-icon'"/>   
-          Мастеры <!----></router-link>
-      </li>
-
-
-      <li class="c-sidebar-nav-item">
-        <router-link :to="'/master-hub'" class="c-sidebar-nav-link"
-                     target="_self">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" class="c-sidebar-nav-icon">
-            <path fill="var(--ci-primary-color, currentColor)"
-                  d="M32,16V496H480V16ZM448,304H342.111l-32,64H201.889l-32-64H64V144H448Zm0-256v64H64V48ZM64,464V336h86.111l32,64H329.889l32-64H448V464Z"
-                  class="ci-primary"></path>
-          </svg>
-          Мастер Хабы <!----></router-link>
-      </li>
+      
       <li class="c-sidebar-nav-item">
         <router-link :to="'/settings'" class="c-sidebar-nav-link">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" class="c-sidebar-nav-icon">
