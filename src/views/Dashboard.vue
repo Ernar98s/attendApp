@@ -36,7 +36,7 @@
         <td>25.07.2021</td>
         <td>Посещал</td>
       </tr>
-        <tr>
+      <tr>
         <td>Аудитория №2</td>
         <td>26.07.2021</td>
         <td>Посещал</td>
@@ -45,19 +45,55 @@
   </div>
 </template>
 
+
+
 <script>
 export default {
   data() {
     return {
-      warningModal: false,
-      dangerModal: false,
+      warningModal: false, // модалка открывается при True
+      dangerModal: false, // модалка открывается при True
     };
+  },
+
+  created() {
+
+    // Pri zapuske proverka (esli nuzhno)
+    axios.defaults.headers.common["Authorization"] =
+      "Bearer " + window.localStorage.getItem("token");
+    axios({
+      method: "get",
+      url: "/api/",
+    })
+      .then((res) => {
+        console.log(res.data);
+
+      })
+      .catch(function (error) {});
+  },
+
+  methods: {
+    // metody kotorye nuzhno vyzyvat na sobytie
+
+    getData(reason, days, time) {
+      console.log(reason, days, time);
+      axios.defaults.headers.common["Authorization"] =
+        "Bearer " + window.localStorage.getItem("token");
+      axios({
+        method: "post",
+        url:
+          "/api/"
+      })
+        .then((res) => {
+          console.log(res.data);
+        })
+        .catch(function (error) {});
+    },
   },
 };
 </script>
 
 <style scoped>
-
 button {
   color: white;
   margin-bottom: 15px;
